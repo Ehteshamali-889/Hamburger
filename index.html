@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hamburger</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* font-family: "Poppins", sans-serif; */
+            margin: 0;
+            min-height: 100vh;
+        }
+
+        button {
+            background-color: rebeccapurple;
+            border: none;
+            color: white;
+            position: fixed;
+            top: 20px;
+            left: 0px;
+            padding: 1rem;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        button.active {
+            transform: translateX(100px);
+        }
+        nav{
+            background-color:  rebeccapurple;
+            position:fixed;
+            top:0;
+            left:0;
+            height: 100vh;
+            padding:1rem;
+            transform:translateX(-200px);
+            transition:transform 0.3s ease-in-out;
+        }
+        nav.active{
+            transform:translateX(0px);
+        }
+        nav ul{
+            list-style: none;
+            padding:0;
+            margin:0;
+        }
+        nav ul li{
+            padding:1rem 0;
+        }
+        nav a{
+            color:white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn">☰</button>
+    <nav id="nav">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact Us</a></li>
+        </ul>
+    </nav>
+    <script>
+        const btn = document.getElementById("btn");
+        const nav = document.getElementById("nav");
+
+        btn.addEventListener("click", () => {
+            nav.classList.toggle("active");
+            btn.classList.toggle("active");
+        });
+    </script>
+</body>
+
+</html>
